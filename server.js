@@ -9,11 +9,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/home', function (req, res) {
+app.get('/profile', function (req, res) {
     res.send('Profile page yet to be rendered!!!');
 });
 
-app.get('/profile', function (req, res) {
+app.get('/home', function (req, res) {
     res.send('Home page yet to be rendered!!!');
 });
 
