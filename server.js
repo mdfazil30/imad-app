@@ -40,7 +40,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:pgName', function (req, res) {
-    pgName = req.params.pgName;
+    var pgName = req.params.pgName;
     res.send(createHTML(page[pgName]));
 });
 
