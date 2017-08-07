@@ -12,7 +12,7 @@ var page = {
 };
 
 function createHTML(data) {
-    var templatePg = data.templatePg;
+    var templatePg = data;
 var html = `
     <!doctype html>
 <html>
