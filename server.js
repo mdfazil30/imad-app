@@ -6,9 +6,9 @@ var app = express();
 app.use(morgan('combined'));
 
 var page = {
-    'profilePg': 'Profile',
-    'homePg': 'Home',
-    'indexPg': 'Index'
+    'profile': 'Profile',
+    'home': 'Home',
+    'index': 'Index'
 };
 
 function createHTML(data) {
