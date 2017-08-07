@@ -39,8 +39,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/profile', function (req, res) {
-    res.send(createHTML(page[profilePg]));
+app.get('/:pgName', function (req, res) {
+    pgName = req.params.pgName;
+    res.send(createHTML(page[pgName]));
 });
 
 app.get('/home', function (req, res) {
