@@ -22,6 +22,6 @@ body {
 
 .container{
     color: yellow;
-    background-image: url("ui/madi.png");
+    background-image: url("/ui/madi.png");
 }
 
