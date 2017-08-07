@@ -6,7 +6,9 @@ var app = express();
 app.use(morgan('combined'));
 
 var page = {
-    templatePg: 'Profile'
+    profilePg: 'Profile',
+    homePg: 'Home',
+    indexPg: 'Index'
 };
 
 function createHTML(data) {
@@ -38,15 +40,15 @@ app.get('/', function (req, res) {
 });
 
 app.get('/profile', function (req, res) {
-    res.send('Profile page yet to be rendered!!!');
+    res.send(createHTML(page[profilePg]));
 });
 
 app.get('/home', function (req, res) {
-   res.send(createHTML(page));
+   res.send(createHTML(page[homePg]));
 });
 
 app.get('/index', function (req, res) {
-    res.send('Index page yet to be rendered!!!');
+    res.send(createHTML(page[indexPg]));
 });
 
 app.get('/ui/style.css', function (req, res) {
