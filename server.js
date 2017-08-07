@@ -5,6 +5,34 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var page = {
+    templatePg: 'Home'
+};
+
+function createHTML(data) {
+    var templatePg = data.templatePg;
+var html = `
+    <!doctype html>
+<html>
+    <head>
+        <title>${templatePg} | MySite</title>
+        <link href="/ui/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class = "container">
+            <h1>
+                ${templatePg}
+            </h1>
+            <p>
+                ${templatePg} content should go here!
+            </p>
+        </div>
+    </body>
+</html>
+`;
+return html;
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -14,7 +42,7 @@ app.get('/profile', function (req, res) {
 });
 
 app.get('/home', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'home.html'));
+   res.send(createHTML(page));
 });
 
 app.get('/index', function (req, res) {
