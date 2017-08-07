@@ -10,11 +10,11 @@ app.get('/', function (req, res) {
 });
 
 app.get('/home', function (req, res) {
-    res.send('Home page yet to be rendered!!!');
+    res.send('Profile page yet to be rendered!!!');
 });
 
 app.get('/home', function (req, res) {
-    res.send('Profile page yet to be rendered!!!');
+    res.send('Home page yet to be rendered!!!');
 });
 
 app.get('/home', function (req, res) {
