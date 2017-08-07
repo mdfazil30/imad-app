@@ -13,11 +13,11 @@ app.get('/home', function (req, res) {
     res.send('Profile page yet to be rendered!!!');
 });
 
-app.get('/home', function (req, res) {
+app.get('/profile', function (req, res) {
     res.send('Home page yet to be rendered!!!');
 });
 
-app.get('/home', function (req, res) {
+app.get('/index', function (req, res) {
     res.send('Index page yet to be rendered!!!');
 });
 
