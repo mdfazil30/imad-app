@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var page = {
-    templatePg: 'Home'
+    templatePg: 'Profile'
 };
 
 function createHTML(data) {
