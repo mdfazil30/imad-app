@@ -39,7 +39,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:pgName', function (req, res) {
+app.get('/page/:pgName', function (req, res) {
     var pgName = req.params.pgName;
     res.send(createHTML(page[pgName]));
 });
