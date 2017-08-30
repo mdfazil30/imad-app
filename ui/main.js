@@ -6,7 +6,7 @@ btn.onclick = function() {
     console.log("check1");
     request.onreadystatechange = function() {
         console.log("check2");
-        if(request.readyState === XMLHttpRequest.DONe) {
+        if(request.readyState === XMLHttpRequest.DONE) {
             console.log("check3");
             if(request.status === 200) {
                 console.log("check4");
