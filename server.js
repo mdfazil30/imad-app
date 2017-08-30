@@ -44,13 +44,12 @@ app.get('/:pgName', function (req, res) {
     res.send(createHTML(page[pgName]));
 });
 
-/*app.get('/home', function (req, res) {
-   res.send(createHTML(page[homePg]));
-});
+var count = 0;
 
-app.get('/index', function (req, res) {
-    res.send(createHTML(page[indexPg]));
-});*/
+app.get('/counter', function(req, res) {
+    count = count + 1;
+    res.send("Counter value is : " + count);
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
