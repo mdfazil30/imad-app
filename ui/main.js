@@ -11,7 +11,7 @@ btn.onclick = function() {
             if(request.status === 200) {
                 console.log("check4");
                 var counter = request.responseText;
-                log.console(counter.toString());
+                console.log(counter.toString());
                 var span = document.getElementById('counterValue');
                 span.innerHTML = counter.toString();
             }
