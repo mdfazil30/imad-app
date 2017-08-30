@@ -51,7 +51,7 @@ app.get('/counter', function(req, res) {
     res.send("Counter value is : " + count);
 });
 
-app.get('/ui1/main.js', function(req, res) {
+app.get('/ui/main.js', function(req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
