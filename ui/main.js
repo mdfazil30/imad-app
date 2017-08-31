@@ -1,5 +1,5 @@
 console.log('Loaded!');
-var btn = document.getElementById('counterBtnId');
+var loginBtn = document.getElementById('loginBtn');
 // var counter = 0;
 btn.onclick = function() {
     var request = new XMLHttpRequest();
