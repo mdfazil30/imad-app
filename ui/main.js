@@ -1,7 +1,7 @@
 console.log('Loaded!');
 var loginBtn = document.getElementById('loginBtn');
 // var counter = 0;
-btn.onclick = function() {
+loginBtn.onclick = function() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
@@ -12,7 +12,6 @@ btn.onclick = function() {
             }
         }
     };
-    // counter = counter + 1;
     request.open('GET', 'http://mdfazil30.imad.hasura-app.io/counter', true);
     request.send(null);
 };
