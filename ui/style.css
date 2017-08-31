@@ -33,3 +33,13 @@ body {
     color: green;
 }
 
+.button {
+    color: #FFF;
+    background: #1c75bc;
+    border-radius: 3px;
+    font-size: larger;
+    font-family: cursive;
+    padding: 15;
+    width: 200;
+}
+
