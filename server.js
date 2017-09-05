@@ -75,7 +75,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 var pool = new Pool(config);
-app.post('/user-registeration', function(req, res) {
+app.post('/user', function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
     pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function(req, res) {
