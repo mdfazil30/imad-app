@@ -78,11 +78,35 @@ var pool = new Pool(config);
 app.post('/create-user', function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
-    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function(req, res) {
+    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function(err, result) {
        if(err) {
            res.status(500).send(err.toString());
        } else {
            res.send('User created successfully: ' + username);
+       }
+    });
+});
+
+app.post('/login', function(req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    pool.query('SELECT username FROM "user" WHERE username = $1', [username], function(err, result) {
+       if(err) {
+           res.status(500).send(err.toString());
+       } else {
+       if (result.rows.length === 0){
+           res.send(403).send('Username/Password is invalid');
+       }
+           else {
+               var pwd = result.rows[0].password;
+               if(pwd === password) {
+            res.send('Credentials are correct');
+               }
+               else
+               {
+                   res.send(403).send('Username or password is incorrect');
+               }
+           }
        }
     });
 });
