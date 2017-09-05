@@ -1,9 +1,20 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var Pool = require('pg').Pool;
+var bodyParser = require('body-parser');
 
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyParser.json());
+
+var config = {
+    user: 'mdfazil30',
+    database: 'mdfazil30',
+    host: 'db.imad.hasura-app.io',
+    port: '5432',
+    password: process.env.DB_PASSWORD
+};
 
 var page = {
     'profile': 'Profile',
@@ -61,6 +72,19 @@ app.get('/ui/style.css', function (req, res) {
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+
+var pool = new Pool(config);
+app.post('/user-registeration', function(req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    pool.query('INSERT INTO "user" username, password VALUES ($1, $2)', [username, password], function(req, res) {
+       if(err) {
+           res.status(500).send(err.toString());
+       } else {
+           res.send('User created successfully: ' + username)
+       }
+    });
 });
 
 
