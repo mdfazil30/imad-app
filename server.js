@@ -78,7 +78,7 @@ var pool = new Pool(config);
 app.post('/user-registeration', function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
-    pool.query('INSERT INTO "user" username, password VALUES ($1, $2)', [username, password], function(req, res) {
+    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function(req, res) {
        if(err) {
            res.status(500).send(err.toString());
        } else {
